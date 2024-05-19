@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { CollectionReference, DocumentData, QueryDocumentSnapshot, collection, getDocsFromServer, getFirestore, query } from "firebase/firestore";
+import { CollectionReference, DocumentData, collection, getDocsFromServer, getFirestore, query } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { useState } from "react";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,6 +15,9 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_APP_ID
 };
+
+// export const [tops, updateTops] = useState<fit[]>([])
+// export const [bottoms, updateBottoms] = useState<fit[]>([])
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -67,4 +71,21 @@ export const getClosetData = async () => {
 
     console.log(output)
     return output as fit[];
+}
+
+export const updateLocalDB = async () => {
+  const massData = await getClosetData();
+
+  let shirts:fit[] = [];
+  let pants:fit[] = [];
+
+  massData.forEach(clothing => {
+    if(clothing.type == "shirt"){
+      shirts.push(clothing);
+    }else{
+      pants.push(clothing);
+    }
+  })
+
+  return [shirts, pants];
 }

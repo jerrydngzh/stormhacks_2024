@@ -1,24 +1,32 @@
-import { useState } from 'react'
 import StaticTop from './components/staticTop';
 import BottomSection from './components/bottomSection'
 import './App.css'
+import { useEffect, useState } from 'react';
+import { updateLocalDB, fit } from './firebase/firebase';
 
 function App() {
-  const [inventoryViewSelect, setInventoryView] = useState(0);
 
-  const changeInventoryView = (pageView: number) => {
-    document.getElementById("nav" + inventoryViewSelect.toString())?.classList.remove("active");
-    document.getElementById("nav" + pageView.toString())?.classList.add("active");
-    setInventoryView(pageView);
+  const [tops, setTops] = useState<fit[]>([]);
+  const [bottoms, setBottoms] = useState<fit[]>([]);
 
-    console.log({ inventoryViewSelect })
+  useEffect(() => {
+      const getData = async () => {
+          try{
+              const data = await updateLocalDB();
+              setTops(data[0])
+              setBottoms(data[1])
+          } catch(e){
+              console.log(e)
+          }
+      }
 
-  }
+      getData();
+  }, [])
 
   return (
     <>
       <StaticTop />
-      <BottomSection navFunc={changeInventoryView}/>
+      <BottomSection tops={tops} bottoms={bottoms}/>
     </>
   )
 }

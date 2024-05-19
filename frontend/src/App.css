@@ -1,5 +1,10 @@
-*{
+@font-face {
+  font-family: area;
+  src: url("./assets/AreaNormalTrial-Regular-BF65ea75c666f34.otf") format("opentype");
+}
 
+*{
+  font-family: area;
 }
 
 .secondaryBG{

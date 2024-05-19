@@ -7,7 +7,7 @@ function searchBar() {
     return (
         <>
             <div id="searchBar" className="rightSection container secondaryBG">
-                Search Content
+                Search for something...
             </div>
         </>
     )
