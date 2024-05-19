@@ -1,4 +1,48 @@
-#root {
+*{
+
+}
+
+.secondaryBG{
+  background-color: #EEEEEE;
+}
+
+#staticTop{
+  display: flex;
+}
+
+.container{
+  border-radius: 10px;
+}
+
+.topSection{
+  height: 7vh;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.bottomSection{
+  height: 83vh;
+}
+
+.leftSection{
+  min-width: 12vw;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.rightSection{
+  width: 80vw;
+}
+
+.icon{
+  width: 18px;
+  height: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+}
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +83,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */

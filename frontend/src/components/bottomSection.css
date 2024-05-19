@@ -1,0 +1,62 @@
+
+#navBar {
+    padding-top: 2vh;
+}
+  
+.inventoryNavBtn {
+    width: 100%;
+    min-width: 15vw;
+    height: 35px;
+    text-align: center;
+    border: none;
+    background-color: #00000000;
+    color: grey;
+    font-weight: 200;
+    display: flex;
+    justify-content: left;
+    padding-left: 8%;
+}
+
+.inventoryNavBtn:hover, .active{
+    color: black;
+    font-weight: 800;
+}
+
+.active{
+    border-left: solid 5px black;
+}
+
+#gallery{
+    display: flex;
+    /* width: 82%; */
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.entry:nth-child(4n){
+    margin-right: 0;
+}
+
+#dynamicView{
+    width: 81vw;
+}
+
+.entry{
+    height: 23.5vw;
+    width: 18.8vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.entry img{
+    height: 100%;
+    width: 100%;
+}
+
+.inventoryNavBtn p{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
