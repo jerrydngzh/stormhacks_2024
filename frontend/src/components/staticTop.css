@@ -1,0 +1,15 @@
+.topStaticElements{
+
+}
+
+#logoContainer{
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-weight: 600;
+    padding-top: 13px;
+}
+
+#searchBar{
+    /* width: ; */
+}
