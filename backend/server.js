@@ -1,5 +1,4 @@
-var PORT = process.env.PORT || 8080;
-
+var firebaseAdmin = require('./db/firebase');
 var createError = require('http-errors');
 var express = require('express');
 var logger = require('morgan');
@@ -7,6 +6,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var closetRouter = require('./routes/closet.route');
 var outfitsRouter = require('./routes/outfits.route');
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -42,8 +42,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-// TODO: add db initialization here
-app.listen(PORT, () => {
-  console.log('Closet api listening on port 3000!');
-});
+// TODO: db connection here
+
+
 

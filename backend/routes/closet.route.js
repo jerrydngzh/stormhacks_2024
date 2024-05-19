@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
+var closetService = require("../services/closet.service");
+
 /*
     call the service object functions in /services
     to get the data and return it to the client
