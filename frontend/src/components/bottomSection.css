@@ -114,3 +114,32 @@
 .scrollBtn:hover{
     background-color: #333333;
 }
+
+#bottomDisplay{
+    position: relative;
+    left: 35%;
+    top: 5%;
+}
+
+#topDisplay{
+    position: relative;
+    left: 35%;
+    top: 5%;
+}
+
+#upperL{
+    top: -50%;
+}
+
+#upperR{
+    top: -50%;
+    left: 60%;
+}
+
+.btnBot{
+    top: -50%;
+}
+
+#lowerR{
+    left: 60%;
+}

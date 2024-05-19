@@ -80,7 +80,7 @@ export const updateLocalDB = async () => {
   let pants:fit[] = [];
 
   massData.forEach(clothing => {
-    if(clothing.type == "shirt"){
+    if(clothing.type.stringValue === "shirt"){
       shirts.push(clothing);
     }else{
       pants.push(clothing);
