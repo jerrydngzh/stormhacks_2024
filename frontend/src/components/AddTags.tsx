@@ -3,28 +3,32 @@ import "./bottomSection.css"
 
 const AddTags: FC = () => {
 
-    // interface Tag {
-    //     id: number;
-    //     name: string;
-    // }
+    interface Tag {
+        id: number;
+        name: string;
+    }
 
-    const [tag, setTag] = useState('');
-    const handleTag = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTag(event.target.value);
-    };
+    // generate ids for the tags
+    const [idCounter, setIdCounter] = useState(0);
 
-    const [tagList, setTagList] = useState<string[]>([]);
+    const [tags, setTags] = useState<Tag[]>([]);
+
+    const addTag = (newTag: Tag) => {
+        setTags([...tags, newTag]);
+    }
+
     const onEnter = (event: any) => {
         if (event.key === "Enter") {
-            setTagList([...tagList, tag]);
-            setTag("");
+            addTag({ id: idCounter, name: event.target.value });
+            setIdCounter(idCounter + 1);
+            event.target.value = "";
         }
     };
 
-    // const deleteTag = (tagToDelete: Item) => {
-    //     const updatedItems = items.filter(item => item.id !== itemToDelete.id);
-    //     setItems(updatedItems);
-    // };
+    const deleteTag = (tagToDelete: Tag) => {
+        const updatedTags = tags.filter(tag => tag.id !== tagToDelete.id);
+        setTags(updatedTags);
+    };
 
     return (
         <>
@@ -32,19 +36,18 @@ const AddTags: FC = () => {
                 <input
                     type='text'
                     name='tag'
-                    value={tag}
                     placeholder='Type a tag...'
-                    onChange={handleTag}
                     onKeyDown={onEnter}
                 ></input>
                 <ul>
-                    {tagList.map((tag) => (
-                        <li>
-                            {tag}
-                            {/* <button
-                                onClick={deleteTag()}>x</button> */}
-                        </li>
+                    {tags.map(tag => (
+                        <div>
+                            <li key={tag.id}>{tag.name}</li>
+                            <button onClick={() => deleteTag(tag)}>x</button>
+                        </div>
+
                     ))}
+
                 </ul>
             </div>
         </>
