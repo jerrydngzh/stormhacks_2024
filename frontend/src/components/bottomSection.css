@@ -1,16 +1,21 @@
-
+/* NAVIGATION */
 #navBar {
     padding-top: 2vh;
 }
   
 .inventoryNavBtn {
     width: 100%;
+    min-width: 15vw;
     height: 35px;
     text-align: center;
     border: none;
     background-color: #00000000;
     color: grey;
     font-weight: 200;
+    display: flex;
+    justify-content: left;
+    padding-left: 8%;
+    transition: border-left 0.5s;
 }
 
 .inventoryNavBtn:hover, .active{
@@ -20,4 +25,121 @@
 
 .active{
     border-left: solid 5px black;
+}
+
+/* DYNAMIC VIEW SETTINGS */
+
+#dynamicView{
+    width: 81vw;
+}
+
+/*INVENTORY GALLERY*/
+
+#gallery{
+    display: flex;
+    /* width: 82%; */
+    height: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: scroll;
+}
+
+.entry:nth-child(4n){
+    margin-right: 0;
+}
+
+.entry{
+    height: 23.5vw;
+    width: 18.5vw;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background-color 0.25s;
+}
+
+.entry img{
+    height: 100%;
+    width: 100%;
+}
+
+.entry:hover{
+    background-color: grey;
+}
+
+.inventoryNavBtn p{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+/*GENERATE PAGE*/
+
+#genView{
+    height: 100%;
+}
+
+#topClothing{
+    width: 100%;
+    height: 48%;
+    margin-bottom: 1%;
+}
+
+#lowerClothing{
+    width: 100%;
+    height: 48%;
+}
+
+.leftBtn{
+    left: 5%;
+    
+}
+
+.rightBtn{
+    left: 85%;
+}
+
+.scrollBtn{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: large;
+    top: 49%;
+    font-weight: 600;
+    position: relative;
+}
+
+.scrollBtn:hover{
+    background-color: #333333;
+}
+
+#bottomDisplay{
+    position: relative;
+    left: 35%;
+    top: 5%;
+}
+
+#topDisplay{
+    position: relative;
+    left: 35%;
+    top: 5%;
+}
+
+#upperL{
+    top: -50%;
+}
+
+#upperR{
+    top: -50%;
+    left: 60%;
+}
+
+.btnBot{
+    top: -50%;
+}
+
+#lowerR{
+    left: 60%;
 }

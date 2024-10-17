@@ -4,12 +4,19 @@
 
 #logoContainer{
     text-align: center;
+    padding-left: 3vw;
     color: white;
     background-color: black;
     font-weight: 600;
-    padding-top: 13px;
+    display: flex;
+}
+
+#logo{
+    margin-right: 0.5vw;
 }
 
 #searchBar{
-    /* width: ; */
+    padding-left: 1vw;
+    text-align: left;
+    padding-top: 1.5%;
 }

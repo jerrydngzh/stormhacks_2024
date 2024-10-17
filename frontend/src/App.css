@@ -1,40 +1,50 @@
-#staticTop {
+@font-face {
+  font-family: area;
+  src: url("./assets/AreaNormalTrial-Regular-BF65ea75c666f34.otf") format("opentype");
+}
+
+*{
+  font-family: area;
+}
+
+.secondaryBG{
+  background-color: #EEEEEE;
+}
+
+#staticTop{
   display: flex;
 }
 
-#logoContainer {
-  text-align: center;
-}
-
-#searchBar {
-  padding-left: 1vw;
-  text-align: left;
-}
-
-.container {
-  outline: solid 1px black;
+.container{
   border-radius: 10px;
-
 }
 
-.topSection {
+.topSection{
   height: 7vh;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-.bottomSection {
+.bottomSection{
   height: 83vh;
 }
 
-.leftSection {
-  width: 15vw;
+.leftSection{
+  min-width: 12vw;
   margin-right: 10px;
   margin-left: 5px;
 }
 
-.rightSection {
+.rightSection{
   width: 80vw;
+}
+
+.icon{
+  width: 18px;
+  height: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0;
 }
 
 /* #root {
