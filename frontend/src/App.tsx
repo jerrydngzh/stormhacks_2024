@@ -28,7 +28,7 @@ function App() {
       <StaticTop />
       <BottomSection tops={tops} bottoms={bottoms}/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -6,8 +6,8 @@ function staticTop() {
     return (
         <>
             <div id="staticTop" className="topSection">
-                <Logo/>
-                <SearchBar/>
+                <Logo />
+                <SearchBar />
             </div>
         </>
     )
